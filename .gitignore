@@ -15,3 +15,6 @@
 # Emacs backup files
 *.*~
 *~
+
+# Auto-generated files from protobuf is currently not in git repo.
+*.pb.go
