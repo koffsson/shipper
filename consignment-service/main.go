@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	pb "github.com/ewanvalentine.io/shipper/consignment-service/proto/consignment"
-	vpb "github.com/ewanvalentine.io/shipper/vessel-service/proto/vessel"
+	pb "github.com/koffsson/shipper/consignment-service/proto/consignment"
+	vpb "github.com/koffsson/shipper/vessel-service/proto/vessel"
 	micro "github.com/micro/go-micro"
 )
 
