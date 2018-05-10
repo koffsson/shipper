@@ -18,3 +18,7 @@
 
 # Auto-generated files from protobuf is currently not in git repo.
 *.pb.go
+
+# Binary files generated when testing should be added here!
+*/consignment-service
+*/consignment-cli

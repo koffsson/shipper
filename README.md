@@ -13,10 +13,11 @@ on how to deploy the project on a live system.
 ### Prerequisites (IN NEED OF UPDATE(S))
 
 * [gRPC/protobuf](https://grpc.io/docs/quickstart/go.html) - Googles remote procedure call
-and the accompanying protocol buffer.
+and the accompanying protocol buffer. Follow the instructions to get gRPC up and running.
+* [go-micro](https://github.com/micro/go-micro) - A pluggable gRPC framework. After gRPC/protobuf is installed, run the following command:
 
 ```
-Follow the instruction given in link above to install.
+go get -v -u github.com/micro/protobuf/{proto,protoc-gen-go}
 ```
 
 ### Installing (IN NEED OF UPDATE(S))
