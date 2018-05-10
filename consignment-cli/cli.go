@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"io/ioutil"
 	"log"
@@ -10,10 +9,10 @@ import (
 	pb "github.com/koffsson/shipper/consignment-service/proto/consignment"
 	microclient "github.com/micro/go-micro/client"
 	"github.com/micro/go-micro/cmd"
+	"golang.org/x/net/context"
 )
 
 const (
-	address         = "localhost:50051"
 	defaultFilename = "consignment.json"
 )
 
@@ -28,15 +27,6 @@ func parseFile(file string) (*pb.Consignment, error) {
 }
 
 func main() {
-
-	// REMOVE: Following gRPC code is replaced with go-micro based one instead
-	// // Set up a connection to the server.
-	// conn, err := grpc.Dial(address, grpc.WithInsecure())
-	// if err != nil {
-	// 	log.Fatalf("Did not connect: %v", err)
-	// }
-	// defer conn.Close()
-	// client := pb.NewShippingServiceClient(conn)
 
 	cmd.Init()
 
@@ -55,9 +45,9 @@ func main() {
 		log.Fatalf("Could not parse file: %v", err)
 	}
 
-	r, err := client.CreateConsignment(context.Background(), consignment)
+	r, err := client.CreateConsignment(context.TODO(), consignment)
 	if err != nil {
-		log.Fatalf("Could not greet: %v", err)
+		log.Fatalf("Could not create: %v", err)
 	}
 	log.Printf("Created: %t", r.Created)
 

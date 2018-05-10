@@ -1,12 +1,12 @@
 package main
 
 import (
+	"context"
 	"errors"
 	"fmt"
 
 	pb "github.com/koffsson/shipper/vessel-service/proto/vessel"
-	micro "github.com/micro/go-micro"
-	context "golang.org/x/net/context"
+	"github.com/micro/go-micro"
 )
 
 type Repository interface {
@@ -18,8 +18,8 @@ type VesselRepository struct {
 }
 
 // FindAvailable - checks a specification against a map of vessels,
-// if capacity and max weight are below a vessel's capacity and max weight,
-// then returns that vessel.
+// if capacity and max weight are below a vessels capacity and max weight,
+// then return that vessel.
 func (repo *VesselRepository) FindAvailable(spec *pb.Specification) (*pb.Vessel, error) {
 	for _, vessel := range repo.vessels {
 		if spec.Capacity <= vessel.Capacity && spec.MaxWeight <= vessel.MaxWeight {
@@ -29,7 +29,7 @@ func (repo *VesselRepository) FindAvailable(spec *pb.Specification) (*pb.Vessel,
 	return nil, errors.New("No vessel found by that spec")
 }
 
-// The gRPC service handler
+// Our grpc service handler
 type service struct {
 	repo Repository
 }
@@ -49,7 +49,7 @@ func (s *service) FindAvailable(ctx context.Context, req *pb.Specification, res 
 
 func main() {
 	vessels := []*pb.Vessel{
-		&pb.Vessel{Id: "vessel01", Name: "Boaty McBoatface", MaxWeight: 200000, Capacity: 500},
+		&pb.Vessel{Id: "vessel001", Name: "Kane's Salty Secret", MaxWeight: 200000, Capacity: 500},
 	}
 	repo := &VesselRepository{vessels}
 

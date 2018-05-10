@@ -6,7 +6,7 @@ COPY . .
 
 RUN go get -u github.com/golang/dep/cmd/dep
 RUN dep init && dep ensure
-RUN GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo .
+RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -a .
 
 
 FROM alpine:latest

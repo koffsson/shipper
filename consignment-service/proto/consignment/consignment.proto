@@ -4,7 +4,6 @@ package go.micro.srv.consignment;
 
 service ShippingService {
   rpc CreateConsignment(Consignment) returns (Response) {}
-  // New method
   rpc GetConsignments(GetRequest) returns (Response) {}
 }
 
@@ -18,17 +17,16 @@ message Consignment {
 
 message Container {
   string id = 1;
-  string customer = 2;
+  string customer_id = 2;
   string origin = 3;
+
   string user_id = 4;
 }
 
-// Blank get request
 message GetRequest {}
 
 message Response {
   bool created = 1;
   Consignment consignment = 2;
-  // Add a pluralized consignment to our generic response message
   repeated Consignment consignments = 3;
 }
