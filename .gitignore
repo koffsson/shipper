@@ -16,5 +16,10 @@
 *.*~
 *~
 
-# Auto-generated files from protobuf is currently not in git repo.
-*.pb.go
+# Auto-generated files from protobuf is currently not in git repo? No,
+# they are needed in order to use dep init (?)
+# *.pb.go
+
+# Binary files generated when testing should be added here!
+*/consignment-service
+*/consignment-cli
