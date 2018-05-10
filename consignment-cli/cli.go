@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 
-	pb "github.com/ewanvalentine.io/shipper/consignment-service/proto/consignment"
+	pb "github.com/koffsson/shipper/consignment-service/proto/consignment"
 	microclient "github.com/micro/go-micro/client"
 	"github.com/micro/go-micro/cmd"
 )

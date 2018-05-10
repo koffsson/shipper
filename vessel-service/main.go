@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	pb "github.com/ewanvalentine.io/shipper/vessel-service/proto/vessel"
+	pb "github.com/koffsson/shipper/vessel-service/proto/vessel"
 	micro "github.com/micro/go-micro"
 	context "golang.org/x/net/context"
 )
