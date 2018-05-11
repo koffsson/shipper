@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your
 local machine for development and testing purposes. See deployment for notes
 on how to deploy the project on a live system.
 
-### Prerequisites (IN NEED OF UPDATE(S))
+### Prerequisites
 
 * [gRPC/protobuf](https://grpc.io/docs/quickstart/go.html) - Googles remote procedure call
 and the accompanying protocol buffer. Follow the instructions to get gRPC up and running.
@@ -20,6 +20,26 @@ and the accompanying protocol buffer. Follow the instructions to get gRPC up and
 go get -v -u github.com/micro/protobuf/{proto,protoc-gen-go}
 ```
 
+* [docker-compose](https://docs.docker.com/compose/overview/) - Compose is a tool for defining and running multi-container Docker applications. Run this command to download the latest version of Docker Compose:
+
+```
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+```
+* Apply executable permissions to the binary:
+
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+* Optionally, we can install (bash) command completion:
+
+```
+sudo curl -L https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+```
+* To test the installation, run:
+
+```
+docker-compose --version
+```
 ### Installing (IN NEED OF UPDATE(S))
 
 A step by step series of examples that tell you have to get a development env running
