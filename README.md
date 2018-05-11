@@ -10,15 +10,21 @@ These instructions will get you a copy of the project up and running on your
 local machine for development and testing purposes. See deployment for notes
 on how to deploy the project on a live system.
 
-### Prerequisites
+## Prerequisites
+
+### Part 1
 
 * [gRPC/protobuf](https://grpc.io/docs/quickstart/go.html) - Googles remote procedure call
 and the accompanying protocol buffer. Follow the instructions to get gRPC up and running.
+
+### Part 2
+
 * [go-micro](https://github.com/micro/go-micro) - A pluggable gRPC framework. After gRPC/protobuf is installed, run the following command:
 
 ```
 go get -v -u github.com/micro/protobuf/{proto,protoc-gen-go}
 ```
+### Part 3
 
 * [docker-compose](https://docs.docker.com/compose/overview/) - Compose is a tool for defining and running multi-container Docker applications. Run this command to download the latest version of Docker Compose:
 
@@ -40,6 +46,13 @@ sudo curl -L https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/com
 ```
 docker-compose --version
 ```
+* [gopkg.in/mgo.v2](https://gopkg.in/mgo.v2) - Rich MongoDB driver for Go. Install by simply running following command:
+
+```
+go get gopkg.in/mgo.v2
+```
+
+
 ### Installing (IN NEED OF UPDATE(S))
 
 A step by step series of examples that tell you have to get a development env running
