@@ -6,12 +6,12 @@ import (
 )
 
 const (
-	dbName                 = "shipper"
-	consgingmentCollection = "consignments"
+	dbName                = "shipper"
+	consingmentCollection = "consignments"
 )
 
 type Repository interface {
-	Create(*pb.Consignment) (*pb.Consignment, error)
+	Create(*pb.Consignment) error
 	GetAll() ([]*pb.Consignment, error)
 	Close()
 }
@@ -50,5 +50,5 @@ func (repo *ConsignmentRepository) Close() {
 }
 
 func (repo *ConsignmentRepository) collection() *mgo.Collection {
-	return repo.session.DB(dbName).C(consgingmentCollection)
+	return repo.session.DB(dbName).C(consingmentCollection)
 }

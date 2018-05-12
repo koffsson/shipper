@@ -5,11 +5,12 @@ import (
 	// Import the generated protobuf code
 	"fmt"
 	"log"
+
 	"os"
 
 	pb "github.com/koffsson/shipper/consignment-service/proto/consignment"
 	vesselProto "github.com/koffsson/shipper/vessel-service/proto/vessel"
-	micro "github.com/micro/go-micro"
+	"github.com/micro/go-micro"
 )
 
 const (
@@ -18,8 +19,9 @@ const (
 
 func main() {
 
-	// Database host from the environment variable
+	// Database host from the environment variables
 	host := os.Getenv("DB_HOST")
+
 	if host == "" {
 		host = defaultHost
 	}
@@ -51,7 +53,7 @@ func main() {
 	srv.Init()
 
 	// Register handler
-	pb.RegisterShippingServiceHandler(srv.Server(), &service{repo, vesselClient})
+	pb.RegisterShippingServiceHandler(srv.Server(), &service{session, vesselClient})
 
 	// Run the server
 	if err := srv.Run(); err != nil {
