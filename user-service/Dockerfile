@@ -6,12 +6,12 @@ COPY . .
 
 RUN go get -u github.com/golang/dep/cmd/dep
 RUN dep init && dep ensure
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 build -a .
+RUN GOOS=linux CGO_ENABLED=0 GOARCH=amd64 go build -o user-service -a main.go handler.go repository.go database.go token_service.go
 
 
 FROM alpine:latest
 
-RUN apt --no-cache add ca-certificates
+RUN apk --no-cache add ca-certificates
 
 RUN mkdir /app
 WORKDIR /app

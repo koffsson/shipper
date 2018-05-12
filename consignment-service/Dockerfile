@@ -6,7 +6,7 @@ COPY . .
 
 RUN go get -u github.com/golang/dep/cmd/dep
 RUN dep init && dep ensure
-RUN CGO_ENABLED=0 GOOS=linux CGO_ENABLED=0 go build -o consignment-service -a main.go repository.go handler.go datastore.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o consignment-service -a main.go repository.go handler.go datastore.go
 
 FROM alpine:latest
 

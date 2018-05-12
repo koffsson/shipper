@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/dgrijalva/jwt-go"
-	pb "github.com/koffsson/shipper/shippy/user-service/proto/user"
+	pb "github.com/koffsson/shipper/user-service/proto/user"
 )
 
 var (
