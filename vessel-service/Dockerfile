@@ -6,7 +6,7 @@ COPY . .
 
 RUN go get -u github.com/golang/dep/cmd/dep
 RUN dep init && dep ensure
-RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -a .
+RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o vessel-service -a main.go repository.go handler.go datastore.go
 
 
 FROM alpine:latest
