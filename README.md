@@ -61,11 +61,20 @@ go get golang.org/x/crypto/bcrypt
 ```
 go get github.com/jinzhu/gorm
 ```
-* [go.uuid](https://github.com/satori/go.uuid) - A pure Golang implementation of Universal Unique Identifier [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). Install by running:
+* <del>[go.uuid](https://github.com/satori/go.uuid) - A pure Golang implementation of Universal Unique Identifier [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). Install by running:</del>
+<del>
 
 ```
 go get github.com/satori/go.uuid
 ```
+</del>
+
+* [gouuid](https://github.com/nu7hatch/gouuid) - A pure Golang implementation of Universal Unique Identifier [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). Install by running:
+
+```
+go get go get github.com/nu7hatch/gouuid
+```
+
 * [jwt-go](https://github.com/dgrijalva/jwt-go) - Golang implementation of [JSON Web Tokens](https://jwt.io/introduction). Install by running:
 
 ```
