@@ -51,8 +51,26 @@ docker-compose --version
 ```
 go get gopkg.in/mgo.v2
 ```
+* [bcrypt](https://godoc.org/golang.org/x/crypto/bcrypt) - Package bcrypt implements Provos and Mazières's bcrypt adaptive hashing algorithm. Install by running:
 
+```
+go get golang.org/x/crypto/bcrypt
+```
+* [GORM](http://gorm.io) - Golang Object Relational Mapper (GORM). Install by running:
 
+```
+go get github.com/jinzhu/gorm
+```
+* [go.uuid](https://github.com/satori/go.uuid) - A pure Golang implementation of Universal Unique Identifier [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). Install by running:
+
+```
+go get github.com/satori/go.uuid
+```
+* [jwt-go](https://github.com/dgrijalva/jwt-go) - Golang implementation of [JSON Web Tokens](https://jwt.io/introduction). Install by running:
+
+```
+go get github.com/dgrijalva/jwt-go
+```
 ### Installing (IN NEED OF UPDATE(S))
 
 A step by step series of examples that tell you have to get a development env running

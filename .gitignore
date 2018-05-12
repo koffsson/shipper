@@ -24,3 +24,5 @@
 */consignment-service
 */consignment-cli
 */datastore
+*/user-service
+*/vessel-service
