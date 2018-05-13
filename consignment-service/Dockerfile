@@ -1,4 +1,4 @@
-FROM golang:1.9.0 as builder
+FROM golang:1.9.2 as builder
 
 WORKDIR /go/src/github.com/koffsson/shipper/consignment-service
 
@@ -6,7 +6,7 @@ COPY . .
 
 RUN go get -u github.com/golang/dep/cmd/dep
 RUN dep init && dep ensure
-RUN CGO_ENABLED=0 GOOS=linux CGO_ENABLED=0 go build -a .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o consignment-service -a main.go repository.go handler.go datastore.go
 
 FROM alpine:latest
 

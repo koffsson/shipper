@@ -10,16 +10,76 @@ These instructions will get you a copy of the project up and running on your
 local machine for development and testing purposes. See deployment for notes
 on how to deploy the project on a live system.
 
-### Prerequisites (IN NEED OF UPDATE(S))
+## Prerequisites
+
+### Part 1
 
 * [gRPC/protobuf](https://grpc.io/docs/quickstart/go.html) - Googles remote procedure call
 and the accompanying protocol buffer. Follow the instructions to get gRPC up and running.
+
+### Part 2
+
 * [go-micro](https://github.com/micro/go-micro) - A pluggable gRPC framework. After gRPC/protobuf is installed, run the following command:
 
 ```
 go get -v -u github.com/micro/protobuf/{proto,protoc-gen-go}
 ```
+### Part 3
 
+* [docker-compose](https://docs.docker.com/compose/overview/) - Compose is a tool for defining and running multi-container Docker applications. Run this command to download the latest version of Docker Compose:
+
+```
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+```
+* Apply executable permissions to the binary:
+
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+* Optionally, we can install (bash) command completion:
+
+```
+sudo curl -L https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+```
+* To test the installation, run:
+
+```
+docker-compose --version
+```
+* [gopkg.in/mgo.v2](https://gopkg.in/mgo.v2) - Rich MongoDB driver for Go. Install by simply running following command:
+
+```
+go get gopkg.in/mgo.v2
+```
+* [bcrypt](https://godoc.org/golang.org/x/crypto/bcrypt) - Package bcrypt implements Provos and Mazières's bcrypt adaptive hashing algorithm. Install by running:
+
+```
+go get golang.org/x/crypto/bcrypt
+```
+* [GORM](http://gorm.io) - Golang Object Relational Mapper (GORM). Install by running:
+
+```
+go get github.com/jinzhu/gorm
+```
+* <del>[go.uuid](https://github.com/satori/go.uuid) - A pure Golang implementation of Universal Unique Identifier [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). Install by running:</del>
+<del>
+
+```
+go get github.com/satori/go.uuid
+```
+</del>
+
+* [gouuid](https://github.com/nu7hatch/gouuid) - A pure Golang implementation of Universal Unique Identifier [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). Install by running:
+
+```
+go get go get github.com/nu7hatch/gouuid
+```
+
+* [jwt-go](https://github.com/dgrijalva/jwt-go) - Golang implementation of [JSON Web Tokens](https://jwt.io/introduction). Install by running:
+
+```
+go get github.com/dgrijalva/jwt-go
+```
 ### Installing (IN NEED OF UPDATE(S))
 
 A step by step series of examples that tell you have to get a development env running
